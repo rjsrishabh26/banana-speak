@@ -1,6 +1,7 @@
 var click1 = document.querySelector("#button1");
 var txtInput = document.querySelector("#txt-input");
 var outputDiv = document.querySelector("#output");
+var click2 = document.querySelector("#button2");
 
 var serverURL = "https://api.funtranslations.com/translate/minion.json"
 
@@ -25,5 +26,10 @@ function clickHandler() {
            })
         .catch(errorHandler)
 };
+function clearClickHandler(event) {
+    txtInput.value = "";
+    outputDiv.innerHTML = "";
+}
 
-click1.addEventListener("click", clickHandler)
+click1.addEventListener("click", clickHandler);
+click2.addEventListener("click",clearClickHandler);
